@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=E4405F&center=true&vCenter=true&width=600&lines=Hi!+I'm+Hatziry+Vitales+Herrera;Computer+Engineering+%40+ESCOM-IPN;Cryptography+%7C+Secure+Systems+%7C+Rust;I+code+algorithms...+and+I+crochet+them+too+%F0%9F%A7%B6" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=800&size=28&duration=3000&pause=900&color=E4405F&center=true&vCenter=true&width=800&lines=Hi!+I'm+Hatziry+Vitales+Herrera;Computer+Engineering+%40+ESCOM-IPN;Cryptography+%7C+Secure+Systems+%7C+Rust;I+code+algorithms...+and+I+crochet+them+too+%F0%9F%A7%B6" alt="Typing SVG" />
 </h1>
 
 ## 🚀 About Me
