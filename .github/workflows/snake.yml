@@ -24,6 +24,17 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
+      - name: Slow down snake animation
+        # The snake SVG bakes its whole loop into a single duration (in ms);
+        # frame offsets are percentages, so multiplying the ms slows it evenly.
+        # SPEED_FACTOR = 2 -> half speed. Bump it up for an even slower crawl.
+        env:
+          SPEED_FACTOR: "2"
+        run: |
+          for f in dist/*.svg; do
+            perl -i -pe 's/(\d+)ms/int($1*$ENV{SPEED_FACTOR})."ms"/ge' "$f"
+          done
+
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
