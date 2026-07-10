@@ -19,7 +19,7 @@ When I'm not writing code, I'm running algorithms of a different kind: **I croch
 🧵 Follow my crochet work → [**@crochat0**](https://instagram.com/crochat0)
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/vhhatziry/vhhatziry/main/assets/crochet-animation.svg" width="600" alt="crochet meets code animation" />
+  <img src="https://raw.githubusercontent.com/vhhatziry/vhhatziry/main/assets/crochet-animation.svg?v=2" width="600" alt="crochet meets code animation" />
 </div>
 
 ### 🛠️ Tech Stack & Tools
