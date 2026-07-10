@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200" role="img" aria-label="Crochet meets code animation">
+  <title>Crochet meets code</title>
+  <defs>
+    <linearGradient id="yarn" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FF6FA5"/>
+      <stop offset="1" stop-color="#E4405F"/>
+    </linearGradient>
+    <style>
+      .mono { font-family: 'JetBrains Mono','Fira Code',Consolas,monospace; }
+      .thread { stroke: url(#yarn); stroke-width: 3; fill: none; stroke-linecap: round; }
+      .stitch { fill: none; stroke: url(#yarn); stroke-width: 3; stroke-linecap: round;
+                stroke-dasharray: 26; stroke-dashoffset: 26;
+                animation: draw 4s ease-in-out infinite; }
+      .caret { fill: #E4405F; animation: blink 1s steps(1) infinite; }
+      .label { fill: #9aa0a6; }
+      .pink  { fill: #E4405F; }
+      @keyframes draw   { 0% {stroke-dashoffset:26} 45%,100% {stroke-dashoffset:0} }
+      @keyframes blink  { 0%,50% {opacity:1} 51%,100% {opacity:0} }
+      @keyframes spin   { to { transform: rotate(360deg); } }
+      @keyframes bob    { 0%,100% {transform:translateY(0)} 50% {transform:translateY(-6px)} }
+      @keyframes flow   { to { stroke-dashoffset: -40; } }
+      .ball  { transform-box: fill-box; transform-origin: center; animation: spin 9s linear infinite; }
+      .hook  { animation: bob 2.4s ease-in-out infinite; }
+      .feed  { stroke: url(#yarn); stroke-width: 3; fill: none; stroke-linecap: round;
+               stroke-dasharray: 8 6; animation: flow 1.2s linear infinite; }
+    </style>
+  </defs>
+
+  <!-- code comment header -->
+  <text x="40" y="48" class="mono label" font-size="18">// a crochet pattern is just pseudocode</text>
+
+  <!-- the "code line" being stitched, left to right -->
+  <text x="40" y="150" class="mono pink" font-size="20">for row in pattern:</text>
+  <text x="220" y="150" class="mono label" font-size="20">stitch()</text>
+  <rect x="316" y="134" width="11" height="20" class="caret"/>
+
+  <!-- chain of stitches drawn along the baseline -->
+  <g transform="translate(40,100)">
+    <path class="stitch" d="M0 0 q13 -14 26 0"     style="animation-delay:0s"/>
+    <path class="stitch" d="M26 0 q13 -14 26 0"    style="animation-delay:.3s"/>
+    <path class="stitch" d="M52 0 q13 -14 26 0"    style="animation-delay:.6s"/>
+    <path class="stitch" d="M78 0 q13 -14 26 0"    style="animation-delay:.9s"/>
+    <path class="stitch" d="M104 0 q13 -14 26 0"   style="animation-delay:1.2s"/>
+    <path class="stitch" d="M130 0 q13 -14 26 0"   style="animation-delay:1.5s"/>
+    <path class="stitch" d="M156 0 q13 -14 26 0"   style="animation-delay:1.8s"/>
+  </g>
+
+  <!-- yarn feed from the ball to the hook -->
+  <path class="feed" d="M300 96 C 380 70, 430 120, 486 100"/>
+
+  <!-- crochet hook -->
+  <g class="hook" transform="translate(250,60)">
+    <line x1="0" y1="0" x2="34" y2="34" class="thread"/>
+    <path d="M0 0 q-12 -4 -6 -14 q4 -7 12 -2" class="thread"/>
+  </g>
+
+  <!-- ball of yarn -->
+  <g transform="translate(530,100)">
+    <g class="ball">
+      <circle r="34" fill="url(#yarn)"/>
+      <path d="M-30 -10 A34 34 0 0 1 24 -24" class="thread" stroke="#fff" opacity=".45"/>
+      <path d="M-24 18 A34 34 0 0 1 30 8"    class="thread" stroke="#fff" opacity=".45"/>
+      <path d="M-34 4 A34 34 0 0 0 28 -18"   class="thread" stroke="#fff" opacity=".35"/>
+      <path d="M-14 -30 A34 34 0 0 1 20 26"  class="thread" stroke="#fff" opacity=".3"/>
+    </g>
+  </g>
+</svg>
