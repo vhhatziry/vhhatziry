@@ -31,8 +31,12 @@ jobs:
         env:
           SPEED_FACTOR: "2"
         run: |
+          # snk runs in Docker as root, so dist/ is root-owned; take ownership
+          # first or perl -i can't create its temp file.
+          sudo chown -R "$(id -u):$(id -g)" dist
           for f in dist/*.svg; do
             perl -i -pe 's/(\d+)ms/int($1*$ENV{SPEED_FACTOR})."ms"/ge' "$f"
+            echo "$f -> $(grep -o '[0-9]\+ms' "$f" | head -1)"
           done
 
       - name: Push to output branch
